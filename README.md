@@ -13,6 +13,17 @@ I am an AI graduate student, and this repository is dedicated to hands-on experi
 This repository is my practical learning lab for turning AI concepts into real systems.  
 Each project is designed to strengthen both research understanding and engineering skills.
 
+## Repository Layout
+
+- `projects/` - Hands-on LangChain projects (production-style scaffolds)
+- `docs/` - Engineering standards and project documentation
+- `.env.example` - Environment variable template (safe to commit)
+- `.gitignore` - Security-first ignore rules for secrets and local artifacts
+
+## Current Projects
+
+- `projects/01_rag_baseline/` - Local-document RAG baseline with indexing, retrieval, and source-cited answers.
+
 ## Planned Project Areas
 
 - `rag/` - Retrieval pipelines, chunking strategies, and vector search experiments
@@ -20,10 +31,6 @@ Each project is designed to strengthen both research understanding and engineeri
 - `chatbots/` - Domain-focused assistants and conversational interfaces
 - `evaluation/` - Prompt, response quality, latency, and cost benchmarking
 - `notebooks/` - Research notes, prototypes, and experiment tracking
-
-## Current Projects
-
-- `projects/01_rag_baseline/` - First implemented project: local-document RAG baseline with indexing, retrieval, and source-cited answers.
 
 ## Engineering Standards
 
@@ -37,7 +44,14 @@ Each project is designed to strengthen both research understanding and engineeri
 - Vector databases (e.g., Chroma, FAISS, Pinecone)
 - Jupyter notebooks for rapid experimentation
 
-## Getting Started
+## Start Here
+
+Use this order:
+1. Read `docs/programming-best-practices.md`
+2. Run `projects/01_rag_baseline/`
+3. Extend with experiments and evaluations
+
+## Getting Started (Repo)
 
 1. Clone the repository:
    ```bash
@@ -61,6 +75,30 @@ Each project is designed to strengthen both research understanding and engineeri
 5. Add your API key in `.env`:
    ```bash
    OPENAI_API_KEY=your_key_here
+   ```
+
+## Quickstart: Project 01 RAG Baseline
+
+From repo root:
+
+```bash
+cd projects/01_rag_baseline
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp ../../.env.example .env
+```
+
+Then:
+
+1. Put `.txt` or `.md` files in `projects/01_rag_baseline/data/source_docs/`
+2. Build index:
+   ```bash
+   PYTHONPATH=src python -m rag_baseline.main index
+   ```
+3. Ask a question:
+   ```bash
+   PYTHONPATH=src python -m rag_baseline.main ask "What is this project about?"
    ```
 
 ## Roadmap
