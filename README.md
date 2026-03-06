@@ -21,6 +21,14 @@ Each project is designed to strengthen both research understanding and engineeri
 - `evaluation/` - Prompt, response quality, latency, and cost benchmarking
 - `notebooks/` - Research notes, prototypes, and experiment tracking
 
+## Current Projects
+
+- `projects/01_rag_baseline/` - First implemented project: local-document RAG baseline with indexing, retrieval, and source-cited answers.
+
+## Engineering Standards
+
+- `docs/programming-best-practices.md` - Repository coding standards for structure, security, testing, and LLM application quality.
+
 ## Tech Stack (Expected)
 
 - Python 3.10+
@@ -41,19 +49,24 @@ Each project is designed to strengthen both research understanding and engineeri
    python3 -m venv .venv
    source .venv/bin/activate
    ```
-3. Install dependencies (when available):
+3. Create your environment file from the template:
    ```bash
+   cp .env.example .env
+   ```
+4. Install dependencies for a project (example first project):
+   ```bash
+   cd projects/01_rag_baseline
    pip install -r requirements.txt
    ```
-4. Create a `.env` file for API keys:
+5. Add your API key in `.env`:
    ```bash
    OPENAI_API_KEY=your_key_here
    ```
 
 ## Roadmap
 
-- [ ] Create base project structure
-- [ ] Add first RAG prototype
+- [x] Create base project structure
+- [x] Add first RAG prototype
 - [ ] Add first agentic workflow
 - [ ] Add evaluation scripts
 - [ ] Document results and lessons learned
